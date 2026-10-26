@@ -1,0 +1,764 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Ezenwa Michael C.</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ezenwa Michael C. — Product Designer and UI/UX Designer with a front-end and Agricultural Engineering background. Case studies, experience, CV and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark field-green canvas matching the existing portfolio — glowing portrait card hero, mono eyebrows, 18px-radius cards, timeline rail. Single deliberate dark theme. */
+:root{
+  --bg:#070b09; --bg-2:#0c120f; --card:#101914; --card-2:#15201a; --line:#22322a;
+  --fg:#eaf4ee; --muted:#a2b5aa; --dim:#6b8075;
+  --accent:#2bd37f; --accent-2:#8ff0bd; --accent-deep:#0d4a2c; --on-accent:#03140b;
+  --f-display:"Sora","Segoe UI",system-ui,sans-serif;
+  --f-body:"DM Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --r:18px; --max:1180px; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px;background:var(--bg)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.65 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--bg)}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;letter-spacing:-.025em;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font:500 12px/1.4 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.eyebrow.g{color:var(--accent)}
+.hl{color:var(--accent)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--on-accent);padding:8px 14px;border-radius:10px;z-index:100;font-weight:600}
+.skip:focus{left:16px}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15px/1 var(--f-body);padding:15px 22px;border-radius:12px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s,background .2s}
+.btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 0 rgb(43 211 127/.0)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px rgb(43 211 127/.55)}
+.btn-ghost{background:var(--card);border-color:var(--line);color:var(--fg)}
+.btn-ghost:hover{border-color:var(--accent-deep);background:var(--card-2)}
+.arrow{transition:transform .2s}.btn:hover .arrow{transform:translateX(3px)}
+
+/* nav */
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgb(7 11 9/.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.nav.scrolled{border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 15px/1 var(--f-display);white-space:nowrap}
+.mark i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--accent);color:var(--on-accent);font:700 13px/1 var(--f-display);font-style:normal}
+.mark b{color:var(--accent);font-weight:700}
+.links{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.links a{display:block;padding:8px 11px;border-radius:9px;text-decoration:none;font-size:15px;color:var(--muted)}
+.links a:hover,.links a.on{color:var(--fg);background:var(--card)}
+.nav-cta{padding:12px 18px}
+.burger{display:none;width:44px;height:44px;border-radius:11px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.burger span{display:block;width:18px;height:2px;background:currentColor;margin:4px auto;border-radius:2px;transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.m-cta{display:none}
+@media (max-width:980px){
+  .links,.nav-cta{display:none}.burger{display:block}
+  .menu-open .links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:72px;background:var(--bg-2);border-bottom:1px solid var(--line);padding:10px max(20px,env(safe-area-inset-right,0px)) 22px max(20px,env(safe-area-inset-left,0px))}
+  .menu-open .links a{font-size:18px;padding:12px 10px}
+  .menu-open .links .m-cta{display:block;margin-top:10px}
+  .menu-open .links .m-cta a{background:var(--accent);color:var(--on-accent);text-align:center;font-weight:600}
+}
+
+/* hero */
+.hero{position:relative;padding-block:56px 64px;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-80px 0 0;z-index:-1;background:radial-gradient(600px 420px at 70% 20%,rgb(43 211 127/.14),transparent 70%),radial-gradient(500px 380px at 15% 60%,rgb(43 211 127/.07),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.portrait{position:relative;border-radius:26px;padding:6px;background:linear-gradient(160deg,var(--accent),var(--accent-deep) 55%,var(--accent) );box-shadow:0 0 50px -10px rgb(43 211 127/.5);max-width:420px;width:100%}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:21px}
+.name-chip{position:absolute;right:-26px;top:22%;background:rgb(16 25 20/.92);border:1px solid var(--line);border-radius:12px;padding:10px 14px;backdrop-filter:blur(8px);box-shadow:0 12px 30px -10px rgb(0 0 0/.7)}
+.name-chip b{display:block;font:700 14px/1.2 var(--f-display)}
+.name-chip span{font:500 10px/1.4 var(--f-mono);letter-spacing:.12em;color:var(--dim)}
+.avail{position:absolute;left:16px;bottom:16px;display:flex;align-items:center;gap:8px;background:rgb(7 11 9/.82);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:500;backdrop-filter:blur(8px)}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgb(43 211 127/.2);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgb(43 211 127/.05)}}
+.who{font:700 17px/1.3 var(--f-display);margin-bottom:6px}
+.role-line{font:500 12px/1.5 var(--f-mono);letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.hero h1{font-size:clamp(40px,5.6vw,72px);margin:18px 0 20px;line-height:1.04}
+.lede{font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:56ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.stats{display:flex;flex-wrap:wrap;gap:36px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.stats b{display:block;font:700 30px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.stats span{font-size:14px;color:var(--dim)}
+.tools-line{margin-top:22px;font:500 12px/1.6 var(--f-mono);letter-spacing:.12em;color:var(--dim)}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:44px}.portrait{justify-self:center;max-width:360px}.name-chip{right:-10px}}
+@media (max-width:440px){.name-chip{right:8px;top:14px}.stats{gap:24px}}
+
+/* sections */
+section.sec{padding-block:96px}
+section.alt{background:var(--bg-2);border-block:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.sec-head h2{font-size:clamp(32px,4.4vw,52px);margin-top:12px}
+.sec-head p{color:var(--muted);max-width:50ch}
+.pill{font:500 12px/1 var(--f-mono);padding:9px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--card)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.about-copy{display:grid;gap:18px;color:var(--muted);max-width:60ch}
+.about-copy strong{color:var(--fg);font-weight:600}
+.stand{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.stand h3{font-size:20px;margin-bottom:8px}
+.stand ol{list-style:none;margin:0;padding:0;display:grid}
+.stand li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.stand li:first-child{border-top:0}
+.stand .n{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--accent-deep);color:var(--accent);font:500 12px/1 var(--f-mono)}
+.stand h4{font-size:16px;margin-bottom:4px}
+.stand p{color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font:500 13px/1 var(--f-mono);padding:9px 12px;border-radius:9px;background:var(--card);border:1px solid var(--line);color:var(--fg)}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* work cards */
+.work{display:grid;gap:28px}
+.wcard{display:grid;grid-template-columns:1.1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:border-color .25s,transform .25s}
+.wcard:hover{border-color:var(--accent-deep);transform:translateY(-3px)}
+.cover{position:relative;display:block;min-height:420px;overflow:hidden;text-decoration:none}
+.cover .badge{position:absolute;left:18px;top:18px;z-index:2;font:500 11px/1 var(--f-mono);letter-spacing:.12em;background:rgb(7 11 9/.85);border:1px solid var(--line);padding:8px 11px;border-radius:999px}
+.cover.chrome{background:#E4E4E4}
+.cover.chrome img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:0 20%;transition:transform .5s}
+.cover.chrome .darkpeek{position:absolute;right:-18%;bottom:-14%;width:72%;border-radius:12px;box-shadow:0 20px 50px -10px rgb(0 0 0/.6);transform:rotate(-4deg)}
+.cover.chrome .darkpeek img{position:static;border-radius:12px;height:auto}
+.cover.afrinwa{background:radial-gradient(circle at 30% 30%,#ff9a2e,#F57F00 60%,#c75f00);display:flex;align-items:center;justify-content:center;gap:4%;padding:40px 24px 0}
+.cover.afrinwa img{width:40%;max-width:210px;filter:drop-shadow(0 24px 30px rgb(0 0 0/.35));transition:transform .5s}
+.cover.afrinwa img:last-child{transform:translateY(-24px)}
+.wcard:hover .cover.chrome > img{transform:scale(1.03)}
+.wbody{padding:36px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.wbody .eyebrow{color:var(--accent)}
+.wbody h3{font-size:clamp(26px,2.6vw,32px)}
+.wbody > p{color:var(--muted)}
+.meta{display:grid;gap:0;margin:4px 0}
+.meta div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.meta dt{font:500 11px/1.8 var(--f-mono);letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.meta dd{margin:0;font-size:15px}
+.note{font-size:13px;color:var(--dim)}
+.wbody .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+@media (max-width:900px){.wcard{grid-template-columns:1fr}.cover{min-height:300px}.wbody{padding:26px}.meta div{grid-template-columns:1fr;gap:2px}}
+.slot{border:1.5px dashed var(--line);border-radius:22px;padding:30px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;color:var(--muted)}
+.slot .plus{width:52px;height:52px;border-radius:14px;border:1.5px dashed var(--dim);display:grid;place-items:center;font:400 26px/1 var(--f-display);flex:none}
+.slot h3{font-size:19px;color:var(--fg);margin-bottom:2px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;counter-increment:s;display:grid;gap:8px;align-content:start}
+.steps li::before{content:"0" counter(s);font:500 12px/1 var(--f-mono);color:var(--accent);letter-spacing:.1em}
+.steps h3{font-size:19px}
+.steps p{color:var(--muted);font-size:15px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.steps{grid-template-columns:1fr}}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:grid;gap:16px;align-content:start}
+.sk h3{font-size:20px}
+.sk ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.sk li{padding:8px 12px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);font-size:14px}
+.sk.code li{font-family:var(--f-mono);font-size:13px;color:var(--accent-2)}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:20px;font:500 12px/1 var(--f-mono);letter-spacing:.12em;color:var(--dim)}
+.toolbar b{color:var(--fg);font-weight:500;letter-spacing:.04em;padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card)}
+@media (max-width:760px){.skills{grid-template-columns:1fr}}
+
+/* timeline */
+.tl{position:relative;display:grid;gap:16px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:8px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--accent),var(--accent-deep))}
+.ti{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:8px 20px}
+.ti::before{content:"";position:absolute;left:-34px;top:28px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.ti .eyebrow{color:var(--accent)}
+.ti h3{font-size:20px;margin:6px 0 2px}
+.ti .org{color:var(--muted);font-size:15px}
+.ti .when{font:500 12px/1 var(--f-mono);padding:8px 10px;border-radius:8px;background:var(--bg-2);border:1px solid var(--line);white-space:nowrap;align-self:start;font-variant-numeric:tabular-nums}
+.ti ul{grid-column:1/-1;margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:15px;display:grid;gap:4px}
+.ti ul li::marker{color:var(--accent)}
+@media (max-width:620px){.ti{grid-template-columns:1fr}.ti .when{justify-self:start;order:-1}}
+
+/* cv */
+.cv{display:grid;grid-template-columns:340px 1fr;gap:0;background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.cv-side{background:var(--card-2);padding:28px;display:grid;gap:20px;align-content:start;border-right:1px solid var(--line)}
+.cv-photo{border-radius:18px;padding:4px;background:linear-gradient(160deg,var(--accent),var(--accent-deep))}
+.cv-photo img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 16%;border-radius:15px}
+.cv-side h3{font-size:22px}
+.cv-side .role-line{margin-top:4px}
+.cv-contact{display:grid;gap:10px;font-size:14px}
+.cv-contact div{display:grid;gap:2px}
+.cv-contact .eyebrow{font-size:10px}
+.cv-contact a,.cv-contact span.v{word-break:break-word;text-decoration:none}
+.cv-contact a:hover{color:var(--accent)}
+.cv-main{padding:36px;display:grid;gap:28px;min-width:0}
+.cv-block h4{font:500 12px/1.4 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.cv-block p{color:var(--muted)}
+.cv-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cv-row b{font-weight:600}
+.cv-row span{color:var(--dim);font:500 13px/1.6 var(--f-mono)}
+.cv-block .sub{color:var(--muted);font-size:15px}
+.cv-actions{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:860px){.cv{grid-template-columns:1fr}.cv-side{border-right:0;border-bottom:1px solid var(--line);grid-template-columns:140px 1fr;align-items:center}.cv-side .cv-contact{grid-column:1/-1}.cv-main{padding:26px}}
+@media (max-width:440px){.cv-side{grid-template-columns:1fr}.cv-photo{max-width:200px}}
+
+/* contact */
+.contact{position:relative;border:1px solid var(--line);border-radius:28px;padding:64px;overflow:hidden;background:radial-gradient(700px 360px at 85% 0%,rgb(43 211 127/.16),transparent 70%),var(--card);display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact h2{font-size:clamp(34px,4.6vw,56px);margin-top:12px}
+.contact .lede{margin-top:16px}
+.channels{display:grid;gap:10px;margin-top:30px}
+.ch{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgb(7 11 9/.5);text-decoration:none;transition:border-color .2s}
+.ch:hover{border-color:var(--accent-deep)}
+.ch .eyebrow{display:block;font-size:10px;color:var(--accent)}
+.ch .v{font-weight:500;word-break:break-word;min-width:0}
+.copy{font:500 12px/1 var(--f-mono);padding:9px 11px;border-radius:9px;border:1px solid var(--line);background:var(--card-2);color:var(--fg);cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+form.cf{display:grid;gap:14px;background:rgb(7 11 9/.6);border:1px solid var(--line);border-radius:20px;padding:26px;align-content:start}
+.cf label{display:grid;gap:6px;font-weight:500;font-size:14px}
+.cf input,.cf textarea,.cf select{font:400 16px/1.4 var(--f-body);color:var(--fg);background:var(--bg-2);border:1px solid var(--line);border-radius:11px;padding:12px 14px;width:100%}
+.cf input:focus,.cf textarea:focus,.cf select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgb(43 211 127/.18)}
+.cf textarea{min-height:120px;resize:vertical}
+.cf .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf .err{color:#ff8f80;font-size:13px}
+.cf [aria-invalid="true"]{border-color:#ff8f80}
+.cf .done{border:1px solid var(--accent-deep);background:rgb(13 74 44/.35);border-radius:12px;padding:16px;display:grid;gap:10px;font-size:15px}
+.cf .done pre{white-space:pre-wrap;font:400 13px/1.5 var(--f-mono);margin:0;max-height:160px;overflow:auto;background:var(--bg-2);padding:10px;border-radius:8px}
+@media (max-width:900px){.contact{grid-template-columns:1fr;padding:34px 22px;gap:32px}.cf .two{grid-template-columns:1fr}}
+
+footer{padding-block:48px 36px;border-top:1px solid var(--line);margin-top:96px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+.foot h4{font-size:18px;margin:12px 0 4px}
+.foot p,.foot a{color:var(--muted);text-decoration:none;font-size:15px}
+.foot a:hover{color:var(--accent)}
+.foot ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--dim)}
+.legal a{color:var(--muted);text-decoration:none}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+
+/* case study */
+.case{padding-block:36px 40px}
+.crumbs{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.crumbs a{text-decoration:none;color:var(--muted);font-weight:500}
+.crumbs a:hover{color:var(--accent)}
+.case-hero{display:grid;gap:20px;max-width:880px}
+.case-hero h1{font-size:clamp(34px,5.2vw,64px)}
+.disclaimer{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--card);border-radius:12px;padding:14px 16px;font-size:15px;color:var(--muted)}
+.disclaimer strong{color:var(--fg)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:36px}
+.facts div{background:var(--card);padding:18px 20px}
+.facts dt{font:500 11px/1.4 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.facts dd{margin:6px 0 0;font-size:15px}
+@media (max-width:760px){.facts{grid-template-columns:1fr 1fr}}
+.case-cover{margin-block:28px 8px;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.case-cover.light{background:#E4E4E4}
+.case-cover.orange{background:radial-gradient(circle at 30% 30%,#ff9a2e,#F57F00 60%,#c75f00);display:flex;justify-content:center;gap:5%;padding:44px 20px 0}
+.case-cover.orange button{width:34%;max-width:260px}
+.case-body{display:grid;grid-template-columns:210px 1fr;gap:56px;margin-top:48px}
+.toc{position:sticky;top:96px;align-self:start;display:grid;gap:2px;font-size:14px}
+.toc a{text-decoration:none;color:var(--dim);padding:7px 10px;border-radius:8px;display:grid;grid-template-columns:28px 1fr}
+.toc a span{font:500 11px/1.9 var(--f-mono)}
+.toc a:hover{background:var(--card);color:var(--fg)}
+.chapter{padding-block:30px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:48px 1fr;gap:10px}
+.chapter:first-child{padding-top:0}
+.chapter > .n{font:500 13px/2.3 var(--f-mono);color:var(--accent)}
+.chapter h2{font-size:clamp(23px,2.5vw,29px);margin-bottom:14px}
+.chapter .c{display:grid;gap:14px;min-width:0;max-width:68ch}
+.chapter .c.wide{max-width:none}
+.chapter p,.chapter li{color:var(--muted)}
+.chapter strong{color:var(--fg);font-weight:600}
+.chapter ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.chapter ul li::marker{color:var(--accent)}
+.quote{border-left:3px solid var(--accent);padding:6px 0 6px 18px;font:600 clamp(18px,2vw,21px)/1.45 var(--f-display);color:var(--fg)}
+.decisions{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.decisions div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.decisions h3{font-size:16px;margin-bottom:6px;display:flex;gap:10px}
+.decisions h3 span{font:500 12px/1.7 var(--f-mono);color:var(--accent)}
+.decisions p{font-size:15px}
+@media (max-width:620px){.decisions{grid-template-columns:1fr}}
+.shot{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:14px;overflow:hidden;position:relative}
+.shot img{width:100%;height:auto;transition:transform .4s}
+.shot:hover img{transform:scale(1.015)}
+.shot .zoom{position:absolute;right:12px;bottom:12px;font:500 11px/1 var(--f-mono);background:rgb(7 11 9/.85);border:1px solid var(--line);color:var(--fg);padding:7px 9px;border-radius:8px}
+figure{margin:0;display:grid;gap:10px}
+figcaption{font-size:14px;color:var(--dim)}
+.board{background:#E4E4E4;border-radius:14px;border:1px solid var(--line);overflow:hidden}
+.tabs{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.tabs button{font:500 14px/1 var(--f-body);color:var(--muted);background:none;border:0;border-radius:9px;padding:10px 14px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.phones{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:620px}
+.phones figure .shot{background:var(--card-2)}
+.next{margin-top:56px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px}
+.next h3{font-size:clamp(22px,3vw,32px);margin-top:8px}
+@media (max-width:900px){.case-body{grid-template-columns:1fr;gap:20px}.toc{display:none}.chapter{grid-template-columns:1fr;gap:2px}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgb(3 6 5/.92);display:grid;place-items:center;padding:calc(56px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;background:#E4E4E4}
+.lb .x{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px))}
+.lb .cap{position:absolute;left:0;right:0;bottom:calc(6px + env(safe-area-inset-bottom,0px));text-align:center;font-size:13px;color:var(--muted)}
+
+.reveal{transition:opacity .7s ease,transform .7s ease}
+.js .reveal.pre{opacity:.001;transform:translateY(16px)}
+</style>
+
+<a class="skip" href="#home">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="mark" href="#home" aria-label="Ezenwa Michael C. — home"><i>EM</i><span>Ezenwa <b>Michael C.</b></span></a>
+    <nav aria-label="Primary">
+      <ul class="links" id="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="m-cta"><a href="#contact">Let's Talk</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= HOME ================= -->
+<main id="v-home">
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="portrait reveal">
+      <img src="portrait.jpg" width="720" height="900" alt="Ezenwa Michael C. in a dark suit, white shirt and red patterned tie, standing outdoors">
+      <div class="name-chip" aria-hidden="true"><b>Ezenwa M.</b><span>UI/UX · PRODUCT</span></div>
+      <span class="avail">Available for work</span>
+    </div>
+    <div class="reveal">
+      <div class="who">Ezenwa Michael C.</div>
+      <div class="role-line">Product Designer / UI/UX Designer / Front-End</div>
+      <h1>Designing digital experiences that feel <span class="hl">effortless.</span></h1>
+      <p class="lede">I'm a Product and UI/UX Designer with a foundation in front-end development and engineering. I combine user-centred thinking, visual design and technical understanding to create intuitive, accessible products.</p>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">Explore My Work <span class="arrow" aria-hidden="true">→</span></a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+      <div class="stats">
+        <div><b>2</b><span>Case studies</span></div>
+        <div><b>12</b><span>Desktop screens, light &amp; dark</span></div>
+        <div><b>200+</b><span>Project records managed</span></div>
+      </div>
+      <div class="tools-line">FIGMA · USER FLOW · WIREFRAMING · PROTOTYPING</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow g">About me</div><h2>A product designer with an <span class="hl">engineer's</span> discipline.</h2></div></div>
+    <div class="about">
+      <div class="reveal" style="display:grid;gap:28px">
+        <div class="about-copy">
+          <p>I'm <strong>Ezenwa Michael C.</strong>, a UI/UX and Product Designer with a B.Eng. in <strong>Agricultural Engineering</strong> from Michael Okpara University of Agriculture, Umudike. Engineering taught me to define problems clearly and work within real constraints. I bring that same approach to digital products.</p>
+          <p>I design in Figma, from user flows and wireframes to interactive, high-fidelity prototypes. My hands-on knowledge of <strong>HTML, CSS, JavaScript and React</strong> helps me design screens that developers can actually build.</p>
+          <p>My work at the university Biometric Centre and as a field data officer with Abia Atlas kept me close to how people really use forms, systems and data. I want to build products that improve usability, save people time and are genuinely useful.</p>
+        </div>
+        <div class="chips" aria-label="Front-end skills"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Figma</span></div>
+      </div>
+      <div class="stand reveal">
+        <h3>What I stand for</h3>
+        <ol>
+          <li><span class="n">01</span><div><h4>Who I am</h4><p>A UI/UX and product designer with a front-end and engineering foundation.</p></div></li>
+          <li><span class="n">02</span><div><h4>What I do</h4><p>User flows, wireframes, design systems, high-fidelity UI and interactive prototypes.</p></div></li>
+          <li><span class="n">03</span><div><h4>What I care about</h4><p>Inclusive, accessible products that prevent errors and are easy to use.</p></div></li>
+          <li><span class="n">04</span><div><h4>What makes me different</h4><p>I design in components and states, and I understand how the front end is built.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow g">Featured projects</div><h2>Selected work</h2></div><span class="pill">2 case studies</span></div>
+    <div class="work">
+      <article class="wcard reveal">
+        <a class="cover afrinwa" href="#afrinwa" aria-label="Open the Afrinwa Foods case study">
+          <span class="badge">FEATURED CASE STUDY</span>
+          <img src="afrinwa-splash.png" alt="" width="408" height="842" loading="lazy">
+          <img src="afrinwa-home.png" alt="" width="404" height="835" loading="lazy">
+        </a>
+        <div class="wbody">
+          <div class="eyebrow">01 · Food &amp; delivery · Mobile app</div>
+          <h3>Afrinwa Foods</h3>
+          <p>A food discovery and delivery app that helps people in Nigeria find nearby restaurants and food sellers, with familiar local meals front and centre.</p>
+          <dl class="meta">
+            <div><dt>Role</dt><dd>Sole UI/UX designer: brand, components, wireframes, UI and prototype</dd></div>
+            <div><dt>Challenge</dt><dd>Food options are scattered across word of mouth, social pages and several apps, and delivery can be unpredictable.</dd></div>
+            <div><dt>Outcome</dt><dd>Branding, a component library and a clickable iOS prototype. Not yet launched; usability testing is next.</dd></div>
+          </dl>
+          <div class="actions">
+            <a class="btn btn-primary" href="#afrinwa">View case study <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="https://www.figma.com/design/SEEnmxKQxRhdPmxzQJKWLH/ZUWA---PROJECT?node-id=0-1&amp;t=sMi0ePAqfAMoptM0-1" target="_blank" rel="noopener">Open in Figma ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="wcard reveal">
+        <a class="cover chrome" href="#chrome" aria-label="Open the Chrome onboarding case study">
+          <span class="badge">UI PRACTICE · DESKTOP</span>
+          <img src="chrome-light.png" alt="" width="922" height="670" loading="lazy">
+          <span class="darkpeek"><img src="chrome-dark.png" alt="" width="1023" height="700" loading="lazy"></span>
+        </a>
+        <div class="wbody">
+          <div class="eyebrow">02 · Onboarding · Desktop UI</div>
+          <h3>Chrome Onboarding &amp; Sign-in</h3>
+          <p>A complete desktop first-run flow, from choosing a profile to signing in and turning on sync, designed in light and dark mode.</p>
+          <dl class="meta">
+            <div><dt>Role</dt><dd>Sole UI designer: flow, components, both themes, prototype</dd></div>
+            <div><dt>Challenge</dt><dd>Make a person's very first interaction clear, with one obvious next step on every screen.</dd></div>
+            <div><dt>Outcome</dt><dd>A six-step flow in 12 frames across two themes, fully clickable in Figma.</dd></div>
+          </dl>
+          <p class="note">Independent practice project. Not affiliated with or commissioned by Google.</p>
+          <div class="actions"><a class="btn btn-primary" href="#chrome">View case study <span class="arrow" aria-hidden="true">→</span></a></div>
+        </div>
+      </article>
+
+      <div class="slot reveal"><div class="plus" aria-hidden="true">+</div><div><h3>Next case study</h3><p>Reserved for the next project. It will appear here when it's ready.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow g">Design process</div><h2>How I take a product from idea to prototype.</h2></div><p>The same steps I followed on Afrinwa Foods, end to end, as the only designer.</p></div>
+    <ol class="steps">
+      <li class="reveal"><h3>Understand the problem</h3><p>Define what the product must do and who it's for before drawing anything.</p></li>
+      <li class="reveal"><h3>Wireframe the flows</h3><p>Map the core journeys and screen structure in low fidelity.</p></li>
+      <li class="reveal"><h3>Shape the identity</h3><p>Brand mark, colour palette and typography that fit the audience.</p></li>
+      <li class="reveal"><h3>Build the system</h3><p>Reusable Figma components with auto-layout, variants and states.</p></li>
+      <li class="reveal"><h3>Design high-fidelity UI</h3><p>Clear hierarchy, readable contrast and one primary action per screen.</p></li>
+      <li class="reveal"><h3>Prototype and refine</h3><p>Link screens into a clickable prototype, review it and iterate.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow g">Skills</div><h2>From user flow to front-end code.</h2></div></div>
+    <div class="skills">
+      <div class="sk reveal"><h3>Wireframing &amp; prototyping</h3><ul><li>Low-fidelity wireframes</li><li>High-fidelity wireframes</li><li>Interactive prototypes</li><li>User flows</li></ul></div>
+      <div class="sk reveal"><h3>User research</h3><ul><li>Surveys</li><li>Interviews</li><li>Usability testing</li><li>Persona creation</li></ul></div>
+      <div class="sk reveal"><h3>Accessibility &amp; usability</h3><ul><li>Designing for inclusivity</li><li>Responsive layouts</li><li>Error prevention</li></ul></div>
+      <div class="sk code reveal"><h3>Front-end development</h3><ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li></ul></div>
+    </div>
+    <div class="toolbar reveal">TOOLS <b>Figma: auto-layout · components · variants · constraints · plugins</b><b>Canva</b></div>
+  </div>
+</section>
+
+<section class="sec alt" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow g">Experience</div><h2>Where I've been building.</h2></div><a class="btn btn-ghost" href="#cv">View CV <span class="arrow" aria-hidden="true">→</span></a></div>
+    <div class="tl">
+      <div class="ti reveal"><div><div class="eyebrow">Field Data Collection Officer</div><h3>Abia Atlas</h3><div class="org">Abia State</div></div><span class="when">Sept 2025 – Mar 2026</span>
+        <ul><li>Visited government Ministries, Departments and Agencies (MDAs) to collect project data and photographic evidence.</li><li>Uploaded and organised datasets and images in the central database for analysis and reporting.</li><li>Verified and documented state-level development projects for accuracy and completeness.</li><li>Uploaded and managed 200+ project records, making project information easier to access and more reliable.</li></ul></div>
+      <div class="ti reveal"><div><div class="eyebrow">UI/UX Product Design Training</div><h3>Udemy</h3><div class="org">Professional certification</div></div><span class="when">Mar 2025 – Sept 2025</span>
+        <ul><li>Credential ID UC-fff3f3e7-a738-43e7-93cc-367a2ff41883</li></ul></div>
+      <div class="ti reveal"><div><div class="eyebrow">Biometric Staff</div><h3>Biometric Centre</h3><div class="org">Michael Okpara University of Agriculture, Umudike</div></div><span class="when">Jan 2025 –</span>
+        <ul><li>Registered and validated student biometric records with high accuracy.</li><li>Verified examination attendance using biometric authentication systems.</li><li>Resolved identity verification issues so examinations ran smoothly.</li><li>Kept student data confidential and intact.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="cv">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow g">Résumé</div><h2>Curriculum vitae</h2></div></div>
+    <div class="cv reveal">
+      <aside class="cv-side">
+        <div class="cv-photo"><img src="portrait.jpg" alt="Portrait of Ezenwa Michael C." width="720" height="900" loading="lazy"></div>
+        <div><h3>Ezenwa Michael C.</h3><div class="role-line">Product Designer</div></div>
+        <div class="cv-contact">
+          <div><span class="eyebrow">Email</span><a href="mailto:ezenwamichael15@gmail.com">ezenwamichael15@gmail.com</a></div>
+          <div><span class="eyebrow">Phone</span><span class="v">+234 816 499 4729</span></div>
+          <div><span class="eyebrow">LinkedIn</span><a href="https://linkedin.com/in/ezenwa-chibuzor-a7aa983b6/" target="_blank" rel="noopener">in/ezenwa-chibuzor-a7aa983b6 ↗</a></div>
+          <div><span class="eyebrow">Location</span><span class="v">Abia State, Nigeria</span></div>
+        </div>
+      </aside>
+      <div class="cv-main">
+        <div class="cv-block"><h4>Professional summary</h4><p>UI/UX Designer with a strong foundation in front-end development and engineering. Skilled in Figma, prototyping, wireframing, user research and accessibility, with hands-on HTML, CSS, JavaScript and React. I combine my Agricultural Engineering background with digital design to deliver functional, visually engaging interfaces that improve usability and productivity.</p></div>
+        <div class="cv-block"><h4>Education</h4><div class="cv-row"><b>B.Eng. Agricultural Engineering</b></div><p class="sub">Michael Okpara University of Agriculture, Umudike, Abia State, Nigeria</p></div>
+        <div class="cv-block"><h4>Certification</h4><div class="cv-row"><b>UI/UX Product Design Training · Udemy</b><span>Mar 2025 – Sept 2025</span></div><p class="sub">Credential ID UC-fff3f3e7-a738-43e7-93cc-367a2ff41883</p></div>
+        <div class="cv-block"><h4>Experience</h4>
+          <div style="display:grid;gap:10px">
+            <div class="cv-row"><b>Field Data Collection Officer · Abia Atlas</b><span>Sept 2025 – Mar 2026</span></div>
+            <div class="cv-row"><b>Biometric Staff · Biometric Centre, MOUAU</b><span>Jan 2025 –</span></div>
+          </div></div>
+        <div class="cv-block"><h4>Personal project</h4><div class="cv-row"><b>Afrinwa Foods · Mobile app UI</b></div><p class="sub">Interactive components, user flows, navigation and checkout, and a complete high-fidelity prototype for stakeholder presentation.</p></div>
+        <div class="cv-actions">
+          <a class="btn btn-primary" href="Ezenwa-Michael-CV.pdf" target="_blank" rel="noopener">Open full CV (PDF) ↗</a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/ezenwa-chibuzor-a7aa983b6/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div>
+        <div class="eyebrow g">Let's work together</div>
+        <h2>Let's build something <span class="hl">useful.</span></h2>
+        <p class="lede">Recruiters, design teams and clients: I'd love to hear about your role, product or design challenge.</p>
+        <div class="channels">
+          <div class="ch"><div><span class="eyebrow">Email</span><a class="v" href="mailto:ezenwamichael15@gmail.com" style="text-decoration:none">ezenwamichael15@gmail.com</a></div><button class="copy" type="button" data-copy="ezenwamichael15@gmail.com">Copy</button></div>
+          <div class="ch"><div><span class="eyebrow">Phone</span><span class="v">+234 816 499 4729</span></div><button class="copy" type="button" data-copy="+2348164994729">Copy</button></div>
+          <a class="ch" href="https://linkedin.com/in/ezenwa-chibuzor-a7aa983b6/" target="_blank" rel="noopener"><div><span class="eyebrow">LinkedIn</span><span class="v">in/ezenwa-chibuzor-a7aa983b6</span></div><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <form class="cf" id="cf" novalidate>
+        <div class="two">
+          <label for="f-name">Name<input id="f-name" autocomplete="name"><span class="err" id="e-name" hidden></span></label>
+          <label for="f-email">Email<input id="f-email" type="email" autocomplete="email"><span class="err" id="e-email" hidden></span></label>
+        </div>
+        <label for="f-topic">Topic<select id="f-topic"><option>Full-time role</option><option>Freelance project</option><option>Collaboration</option><option>Something else</option></select></label>
+        <label for="f-msg">Message<textarea id="f-msg" placeholder="A few lines about the role or project"></textarea><span class="err" id="e-msg" hidden></span></label>
+        <button class="btn btn-primary" type="submit" style="justify-self:start">Prepare message <span class="arrow" aria-hidden="true">→</span></button>
+        <div class="done" id="done" hidden aria-live="polite">
+          <strong>Your message is ready.</strong>
+          <span>Copy it and send it to ezenwamichael15@gmail.com, or open it in your email app.</span>
+          <pre id="out"></pre>
+          <div style="display:flex;flex-wrap:wrap;gap:10px"><button type="button" class="btn btn-primary" id="copy-msg">Copy message</button><a class="btn btn-ghost" id="mailto" href="mailto:ezenwamichael15@gmail.com">Open in email app</a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= CASE: AFRINWA ================= -->
+<main id="v-afrinwa" class="case" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a href="#work">← All projects</a><span class="eyebrow">Case study 01</span></div>
+    <div class="case-hero">
+      <div class="eyebrow g">Product design · Mobile app · Solo project · Figma</div>
+      <h1>Afrinwa Foods</h1>
+      <p class="lede">A food discovery and delivery app that helps people in Nigeria find restaurants and food sellers near them, and get their food through a reliable delivery system.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-primary" href="https://www.figma.com/design/SEEnmxKQxRhdPmxzQJKWLH/ZUWA---PROJECT?node-id=0-1&amp;t=sMi0ePAqfAMoptM0-1" target="_blank" rel="noopener">Open project in Figma ↗</a></div>
+    </div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Sole UI/UX designer</dd></div>
+      <div><dt>Platform</dt><dd>iOS mobile app</dd></div>
+      <div><dt>Tools</dt><dd>Figma</dd></div>
+      <div><dt>Status</dt><dd>Prototype complete, not launched</dd></div>
+    </dl>
+    <div class="case-cover orange">
+      <button class="shot" type="button" data-full="afrinwa-splash.png" data-cap="Splash screen"><img src="afrinwa-splash.png" alt="Afrinwa splash screen: orange background with a dark fork-and-knife logo and the Afrinwa wordmark" width="408" height="842"></button>
+      <button class="shot" type="button" data-full="afrinwa-home.png" data-cap="Home screen" style="transform:translateY(-24px)"><img src="afrinwa-home.png" alt="Afrinwa home screen with greeting, search, food banner, categories, filter chips and bottom tab bar" width="404" height="835"></button>
+    </div>
+    <div class="case-body">
+      <nav class="toc" aria-label="Case study sections" data-toc></nav>
+      <div>
+        <article class="chapter" data-t="Overview"><span class="n"></span><div class="c"><h2>Overview</h2>
+          <p>Afrinwa celebrates familiar local meals such as jollof, soups, grills and noodles, and puts them at the centre of the experience. I owned the project end to end: <strong>branding and logo, iconography, a component library, wireframes, UI design and an interactive prototype</strong>.</p>
+          <p>Timeline: self-paced personal project.</p></div></article>
+        <article class="chapter" data-t="Problem"><span class="n"></span><div class="c"><h2>The problem</h2>
+          <p>Finding good food nearby is harder than it should be. Local restaurants and independent sellers are scattered across platforms and word of mouth, and when people do order, delivery can be unpredictable.</p>
+          <p class="quote">How might we make it fast and enjoyable to discover nearby food, and trust that the order will arrive?</p></div></article>
+        <article class="chapter" data-t="Users"><span class="n"></span><div class="c"><h2>Target users</h2>
+          <ul><li><strong>Busy professionals</strong> ordering lunch</li><li><strong>Students</strong> looking for affordable options</li><li><strong>Families</strong> planning meals or gifts</li></ul>
+          <p>These are design assumptions rather than findings from formal research. They shaped the focus on nearby results, familiar dishes and dependable delivery.</p></div></article>
+        <article class="chapter" data-t="Process"><span class="n"></span><div class="c"><h2>My role and process</h2>
+          <ul><li><strong>Understanding the problem:</strong> surface nearby options, support different intents (meals, groceries, gifting, going out) and build trust in delivery.</li><li><strong>Wireframing:</strong> core flows and screen structure before visual design.</li><li><strong>Visual identity:</strong> brand mark, colour palette and typography.</li><li><strong>Design system:</strong> every component and icon built from scratch in Figma.</li><li><strong>High-fidelity UI:</strong> onboarding, splash and home screens.</li><li><strong>Prototyping:</strong> screens linked into an interactive prototype.</li></ul></div></article>
+        <article class="chapter" data-t="Decisions"><span class="n"></span><div class="c wide"><h2>Design decisions</h2>
+          <div class="decisions">
+            <div><h3><span>01</span>A bold, warm identity</h3><p>Appetising orange stands out in a category full of red. The dark mark keeps the logo readable at small sizes.</p></div>
+            <div><h3><span>02</span>Built for quick discovery</h3><p>Greeting and delivery location, search prompted with "Jollof", cart and alerts in the header, and a food banner carousel.</p></div>
+            <div><h3><span>03</span>Two layers of categories</h3><p>Services (Deal, Grocery, Restaurant, Gifting, Going Out) and foods (Jollof, Soup, Noodles…) so people browse by craving.</p></div>
+            <div><h3><span>04</span>One-tap filter chips</h3><p>Deals, Pickup, Ratings and Restaurants narrow results without a complex filter menu.</p></div>
+            <div><h3><span>05</span>Familiar navigation</h3><p>A five-item bottom tab bar keeps Home, Browse, Pickup, Order and Me within thumb reach.</p></div>
+            <div><h3><span>06</span>A scalable section pattern</h3><p>Each section has a "See All" action, so the layout grows as more sellers join.</p></div>
+          </div></div></article>
+        <article class="chapter" data-t="Final designs"><span class="n"></span><div class="c wide"><h2>Final designs</h2>
+          <div class="phones">
+            <figure><button class="shot" type="button" data-full="afrinwa-splash.png" data-cap="Splash screen"><img src="afrinwa-splash.png" alt="Afrinwa splash screen" width="408" height="842" loading="lazy"><span class="zoom">Enlarge</span></button><figcaption>Splash: a bold orange brand moment.</figcaption></figure>
+            <figure><button class="shot" type="button" data-full="afrinwa-home.png" data-cap="Home screen"><img src="afrinwa-home.png" alt="Afrinwa home screen" width="404" height="835" loading="lazy"><span class="zoom">Enlarge</span></button><figcaption>Home: search, banners, two category rows, chips and tab bar.</figcaption></figure>
+          </div></div></article>
+        <article class="chapter" data-t="Prototype"><span class="n"></span><div class="c"><h2>Prototype</h2>
+          <p>The full flow is prototyped in Figma and linked as an interactive prototype.</p>
+          <a class="btn btn-ghost" style="justify-self:start" href="https://www.figma.com/design/SEEnmxKQxRhdPmxzQJKWLH/ZUWA---PROJECT?node-id=0-1&amp;t=sMi0ePAqfAMoptM0-1" target="_blank" rel="noopener">Open the Figma file ↗</a></div></article>
+        <article class="chapter" data-t="Outcome"><span class="n"></span><div class="c"><h2>Outcome and challenges</h2>
+          <p>The project is at prototype stage and has not launched. The next milestone is usability testing with real users before development.</p>
+          <p>Designing solo meant many decisions without a second opinion, so I leaned on consistency: one icon style, one set of components and one colour system. The home screen carries a lot of content, so the hardest part was a clear hierarchy that doesn't overwhelm.</p></div></article>
+        <article class="chapter" data-t="Learnings"><span class="n"></span><div class="c"><h2>What I learned</h2>
+          <ul><li>How to design a complete system as a solo designer, from brand to components to prototype.</li><li>Reusable components keep a large design consistent and much faster to iterate on.</li></ul></div></article>
+        <article class="chapter" data-t="Next steps"><span class="n"></span><div class="c"><h2>Next steps</h2>
+          <ul><li>Run usability tests on the prototype with real users.</li><li>Refine the ordering, checkout and delivery tracking flows.</li><li>Explore the seller-side experience.</li><li>Host the prototype so it can be shared and tested.</li></ul></div></article>
+      </div>
+    </div>
+    <div class="next"><div><div class="eyebrow">Next project</div><h3>Chrome Onboarding &amp; Sign-in</h3></div><a class="btn btn-primary" href="#chrome">View case study <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+</main>
+
+<!-- ================= CASE: CHROME ================= -->
+<main id="v-chrome" class="case" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a href="#work">← All projects</a><span class="eyebrow">Case study 02</span></div>
+    <div class="case-hero">
+      <div class="eyebrow g">UI design · Desktop · Light &amp; dark · Figma</div>
+      <h1>Chrome Onboarding &amp; Sign-in</h1>
+      <p class="lede">A self-initiated exercise in designing a complete first-run experience for Chrome on desktop, from choosing a profile to signing in and turning on sync.</p>
+      <p class="disclaimer"><strong>Independent concept exercise.</strong> Not affiliated with or commissioned by Google.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Sole UI designer</dd></div>
+      <div><dt>Platform</dt><dd>Desktop</dd></div>
+      <div><dt>Tools</dt><dd>Figma</dd></div>
+      <div><dt>Type</dt><dd>Self-initiated practice</dd></div>
+    </dl>
+    <div class="case-cover light"><button class="shot" type="button" data-full="chrome-light.png" data-cap="Light mode: all six steps"><img src="chrome-light.png" alt="Six desktop frames in light mode: profile picker, profile setup enabled and disabled, sign in, password and turn on sync" width="922" height="670"><span class="zoom">Enlarge</span></button></div>
+    <div class="case-body">
+      <nav class="toc" aria-label="Case study sections" data-toc></nav>
+      <div>
+        <article class="chapter" data-t="Overview"><span class="n"></span><div class="c"><h2>Overview</h2>
+          <p>I designed the whole flow in <strong>light and dark mode</strong> and built it as a <strong>fully clickable prototype</strong> in Figma. Scope: UI design, components, two themes and an interactive prototype.</p></div></article>
+        <article class="chapter" data-t="What I designed"><span class="n"></span><div class="c"><h2>What I designed</h2>
+          <ul><li>A "Who's using Chrome?" <strong>profile picker</strong>, with a prototyped welcome splash screen</li><li>A <strong>profile setup</strong> screen with enabled and disabled button states</li><li><strong>Sign-in and password</strong> screens with a custom checkbox and a "Show password" option</li><li>A personalised <strong>welcome</strong> screen and a <strong>Turn on sync</strong> screen</li><li>A language dropdown, a type scale and reusable components</li><li>Light and dark versions of every screen</li></ul></div></article>
+        <article class="chapter" data-t="Focus"><span class="n"></span><div class="c"><h2>What I focused on</h2>
+          <ul><li>One clear primary action per screen, so people always know the next step</li><li>Matching the product's visual language: rounded components, clean spacing and playful background shapes</li><li>Readable text, buttons and fields in both themes</li><li>Designing states (enabled, disabled, selected), not static screens</li></ul></div></article>
+        <article class="chapter" data-t="Flow"><span class="n"></span><div class="c"><h2>The flow</h2>
+          <p class="quote">Profile picker → Profile setup → Email sign-in → Password → Turn on sync</p>
+          <p>Six steps, including enabled and disabled setup states. Every screen exists in both themes: 12 frames in total.</p></div></article>
+        <article class="chapter" data-t="Final designs"><span class="n"></span><div class="c wide"><h2>Final designs</h2>
+          <div class="tabs" role="tablist" aria-label="Theme">
+            <button role="tab" type="button" aria-selected="true" aria-controls="p-light" id="t-light">Light mode</button>
+            <button role="tab" type="button" aria-selected="false" aria-controls="p-dark" id="t-dark">Dark mode</button>
+          </div>
+          <figure id="p-light" role="tabpanel" aria-labelledby="t-light"><div class="board"><button class="shot" type="button" data-full="chrome-light.png" data-cap="Light mode"><img src="chrome-light.png" alt="Light mode frames" width="922" height="670" loading="lazy"><span class="zoom">Enlarge</span></button></div><figcaption>Light mode: profile picker, setup (enabled and disabled), sign-in, password and sync.</figcaption></figure>
+          <figure id="p-dark" role="tabpanel" aria-labelledby="t-dark" hidden><div class="board"><button class="shot" type="button" data-full="chrome-dark.png" data-cap="Dark mode"><img src="chrome-dark.png" alt="Dark mode frames" width="1023" height="700" loading="lazy"><span class="zoom">Enlarge</span></button></div><figcaption>Dark mode: the same six steps with adjusted contrast and component states.</figcaption></figure></div></article>
+        <article class="chapter" data-t="Prototype"><span class="n"></span><div class="c"><h2>Prototype</h2>
+          <p>The whole flow is clickable in Figma, including the welcome splash screen, the language dropdown and the form interactions. A link to the prototype is available on request.</p></div></article>
+        <article class="chapter" data-t="Learnings"><span class="n"></span><div class="c"><h2>What I learned</h2>
+          <p>Designing the same flow in light and dark mode showed me how much contrast, spacing and component states matter at every step, especially in a person's very first interaction with a product.</p></div></article>
+        <article class="chapter" data-t="Next steps"><span class="n"></span><div class="c"><h2>Next steps</h2>
+          <ul><li>Add error states for incorrect emails and passwords</li><li>Test the flow with a few real users</li><li>Explore a mobile version of the same flow</li></ul></div></article>
+      </div>
+    </div>
+    <div class="next"><div><div class="eyebrow">Next project</div><h3>Afrinwa Foods</h3></div><a class="btn btn-primary" href="#afrinwa">View case study <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+</main>
+
+<main id="v-404" class="case" hidden>
+  <div class="wrap" style="padding-block:80px;display:grid;gap:20px;max-width:720px">
+    <div class="eyebrow g">404 · Page not found</div>
+    <h1 style="font-size:clamp(40px,6vw,72px)">This page isn't here.</h1>
+    <p class="lede">The link may be out of date. Head back to see the work.</p>
+    <a class="btn btn-primary" href="#home" style="justify-self:start">Back to home</a>
+  </div>
+</main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged design">
+  <button class="btn btn-ghost x" type="button" id="lb-x">Close ✕</button>
+  <img id="lb-img" alt="">
+  <div class="cap" id="lb-cap"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a class="mark" href="#home" style="color:var(--fg)"><i>EM</i><span>Ezenwa <b>Michael C.</b></span></a><h4>EZENWA MICHAEL C.</h4><p>Product Designer | UI/UX Designer</p></div>
+      <div><div class="eyebrow">Navigate</div><ul><li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#cv">CV</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><div class="eyebrow">Contact</div><ul><li><a href="mailto:ezenwamichael15@gmail.com">ezenwamichael15@gmail.com</a></li><li><p>+234 816 499 4729</p></li><li><a href="https://linkedin.com/in/ezenwa-chibuzor-a7aa983b6/" target="_blank" rel="noopener">LinkedIn ↗</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© <span id="yr">2026</span> Ezenwa Michael C. · Product Designer | UI/UX Designer</span><a href="#home">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var D=document; D.documentElement.classList.add('js');
+  D.getElementById('yr').textContent=new Date().getFullYear();
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // case-study chapter numbers + table of contents
+  D.querySelectorAll('.case').forEach(function(c){
+    var toc=c.querySelector('[data-toc]'); if(!toc) return;
+    c.querySelectorAll('.chapter').forEach(function(ch,i){
+      var n=String(i+1).padStart(2,'0'), id=c.id+'-s'+(i+1);
+      ch.id=id; ch.querySelector('.n').textContent=n;
+      var a=D.createElement('a'); a.href='#'+id; a.innerHTML='<span>'+n+'</span>'+ch.dataset.t; toc.appendChild(a);
+    });
+  });
+
+  // mobile menu
+  var nav=D.getElementById('nav'), burger=D.getElementById('burger');
+  function closeMenu(){nav.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu')}
+  burger.addEventListener('click',function(){var o=!nav.classList.contains('menu-open');nav.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',String(o));burger.setAttribute('aria-label',o?'Close menu':'Open menu')});
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>8)},{passive:true});
+
+  // routing between home and case studies
+  var V={home:D.getElementById('v-home'),afrinwa:D.getElementById('v-afrinwa'),chrome:D.getElementById('v-chrome'),nf:D.getElementById('v-404')};
+  var homeIds=['home','about','work','process','skills','experience','cv','contact'];
+  var titles={afrinwa:'Afrinwa Foods Case Study · Ezenwa Michael C.',chrome:'Chrome Onboarding Case Study · Ezenwa Michael C.',nf:'Page not found · Ezenwa Michael C.'};
+  function route(){
+    var h=(location.hash||'#home').slice(1), view, target=null, m;
+    closeMenu();
+    if(V[h] && h!=='nf' && h!=='home'){view=h}
+    else if((m=/^v-(afrinwa|chrome)-s\d+$/.exec(h))){view=m[1];target=D.getElementById(h)}
+    else if(homeIds.indexOf(h)>-1){view='home';target=D.getElementById(h)}
+    else view='nf';
+    var switched=V[view].hidden;
+    Object.keys(V).forEach(function(k){V[k].hidden=k!==view});
+    D.title=titles[view]||'Ezenwa Michael C.';
+    D.querySelectorAll('.links a').forEach(function(a){a.classList.toggle('on',(view==='afrinwa'||view==='chrome')&&a.getAttribute('href')==='#work')});
+    if(target){ if(switched){scrollTo(0,0);requestAnimationFrame(function(){target.scrollIntoView()})} else target.scrollIntoView({behavior:reduce?'auto':'smooth'}) }
+    else scrollTo(0,0);
+  }
+  addEventListener('hashchange',route);
+  if(location.hash && location.hash!=='#home') route();
+
+  // reveal on scroll (only for items below the fold; everything stays readable without JS)
+  if('IntersectionObserver' in window && !reduce){
+    var els=[].slice.call(D.querySelectorAll('#v-home .reveal')).filter(function(el){return el.getBoundingClientRect().top>innerHeight});
+    els.forEach(function(el){el.classList.add('pre')});
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.remove('pre');io.unobserve(en.target)}})},{rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }
+
+  // theme tabs on Chrome case study
+  var tl=D.getElementById('t-light'), td=D.getElementById('t-dark');
+  function tab(dark){tl.setAttribute('aria-selected',String(!dark));td.setAttribute('aria-selected',String(dark));D.getElementById('p-light').hidden=dark;D.getElementById('p-dark').hidden=!dark}
+  tl.addEventListener('click',function(){tab(false)}); td.addEventListener('click',function(){tab(true)});
+  [tl,td].forEach(function(b){b.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var d=b===tl;tab(d);(d?td:tl).focus()}})});
+
+  // lightbox
+  var lb=D.getElementById('lb'), lbImg=D.getElementById('lb-img'), lbCap=D.getElementById('lb-cap'), lastBtn=null;
+  D.querySelectorAll('.shot').forEach(function(b){b.addEventListener('click',function(){lastBtn=b;lbImg.src=b.dataset.full;lbImg.alt=b.querySelector('img').alt;lbCap.textContent=b.dataset.cap||'';lb.hidden=false;D.body.style.overflow='hidden';D.getElementById('lb-x').focus()})});
+  function closeLb(){lb.hidden=true;D.body.style.overflow='';if(lastBtn)lastBtn.focus()}
+  D.getElementById('lb-x').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+  D.addEventListener('keydown',function(e){if(e.key==='Escape'){if(!lb.hidden)closeLb();else closeMenu()}});
+
+  // copy buttons
+  D.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+    var t=b.dataset.copy, o=b.textContent;
+    function ok(){b.textContent='Copied';setTimeout(function(){b.textContent=o},1600)}
+    function fb(){var el=b.parentNode.querySelector('.v');if(el){var r=D.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}b.textContent='Selected'}
+    try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}
+  })});
+
+  // contact form
+  var f=D.getElementById('cf'), val=function(id){return D.getElementById(id).value.trim()};
+  function setErr(k,msg){var e=D.getElementById('e-'+k),i=D.getElementById('f-'+k);e.hidden=!msg;e.textContent=msg||'';i.setAttribute('aria-invalid',msg?'true':'false');return !msg}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=val('f-name'),em=val('f-email'),m=val('f-msg');
+    var ok=[setErr('name',n?'':'Enter your name.'),
+            setErr('email',!em?'Enter your email address.':(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)?'':'Enter an email like name@company.com.')),
+            setErr('msg',m.length>=10?'':'Write at least a short sentence (10+ characters).')];
+    if(ok.indexOf(false)>-1){f.querySelector('[aria-invalid="true"]').focus();return}
+    var subj=val('f-topic')+' — from '+n, body='Hi Michael,\n\n'+m+'\n\n'+n+'\n'+em;
+    D.getElementById('out').textContent='Subject: '+subj+'\n\n'+body;
+    D.getElementById('mailto').href='mailto:ezenwamichael15@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+    var d=D.getElementById('done'); d.hidden=false; d.scrollIntoView({block:'nearest'});
+  });
+  ['name','email','msg'].forEach(function(k){D.getElementById('f-'+k).addEventListener('input',function(){if(this.getAttribute('aria-invalid')==='true')setErr(k,'')})});
+  D.getElementById('copy-msg').addEventListener('click',function(){var b=this;try{navigator.clipboard.writeText(D.getElementById('out').textContent).then(function(){b.textContent='Copied'},function(){})}catch(e){}});
+})();
+</script>
+
+</body></html>
